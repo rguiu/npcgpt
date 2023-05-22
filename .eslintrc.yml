@@ -1,0 +1,48 @@
+# this is the eslint configuration for javascript modules only
+# there's a typescript-slintrc.js file for typescript modules
+
+root: true
+parser: '@babel/eslint-parser'
+parserOptions:
+  ecmaFeatures:
+    legacyDecorators: true
+  babelOptions:
+    rootMode: upward
+env:
+  node: true
+  jest: true
+
+plugins:
+  - jest
+
+extends:
+  - airbnb-base
+  - plugin:jest/recommended
+
+rules:
+  default-case: off
+  no-template-curly-in-string: off
+  # this rule makes the linter file with private functions
+  space-before-function-paren: off 
+  no-plusplus: off
+  no-underscore-dangle: off
+  no-await-in-loop: off
+  class-methods-use-this: off
+  no-param-reassign: off
+  no-empty-function: off
+  no-restricted-syntax: off
+  import/no-extraneous-dependencies: off
+  indent: ['error', 4]
+  max-statements: ['error', 25]
+  max-len: ['error', {code: 160} ]
+  no-use-before-define: ['error', 'nofunc']
+  no-multiple-empty-lines: off
+  arrow-parens: off
+  import/extensions: off
+  max-classes-per-file: off
+  prefer-object-spread: off
+  no-async-promise-executor: off
+  no-cond-assign: off
+  jest/no-standalone-expect: off
+  function-paren-newline: off
+  function-call-argument-newline: off
